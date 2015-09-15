@@ -1,9 +1,8 @@
 # Tiny Satis 
 
-This satis only build one time when you run on docker.
+This satis command build a dist directory with packages that you defined each time when it runs on docker.
 
-The feature is that only build and download packages dist in a directory
-
+If you want to serve this files you can used nginx 
 
 ## Volumes
 
