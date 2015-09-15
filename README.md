@@ -18,6 +18,15 @@ All packages that download go to this directory */data/satis/web*. If you want s
 
     /data/satis/web
 
+
+### Cron 
+
+If you can run periodically satis. You can run docker container in your docker host. For example
+
+    docker run --name mysatis ...
+    # in your cron
+    docker start mysatis && docker logs -f mysatis  2>&1 > mylogs.log
+
 ### satis.json
 
 Mount your satis.json in this directory
