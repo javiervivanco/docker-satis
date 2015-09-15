@@ -1,4 +1,4 @@
-# Tiny Satis 
+# Tiny Satis  [![Build Status](https://travis-ci.org/javiervivanco/docker-satis.svg?branch=master)](https://travis-ci.org/javiervivanco/docker-satis)
 
 This satis command build a dist directory with packages that you defined each time when it runs on docker.
 
@@ -7,7 +7,8 @@ If you want to serve this files you can used nginx
 ## Volumes
 
 ### SSH    
-If you need connect to private repo. You can mount your ssh config like id_ id_rsa, id_rsa.pub, known_hosts  
+
+If you need connected to private repo. You can mount your ssh config like id_ id_rsa, id_rsa.pub, known_hosts  
 
     /root/.ssh
 
