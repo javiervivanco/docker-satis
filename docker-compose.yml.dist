@@ -1,0 +1,20 @@
+voldata:
+  image: tianon/true:latest
+  command: /true
+  volumes:
+      - satis/web:/data/satis/web
+      - satis/config:/data/satis/config
+      - satis/certs:/root/.ssh
+satis:
+    image: javiervivanco/docker-satis
+    environment:
+       GITHUB_OAUTH: XXXXXXXXXXXXXX
+       VERBOSITY: vv
+    volumes_from:
+        - voldata
+web:
+    image: nginx
+    ports:
+    - '80:80'
+    volumes:
+        - satis/web:/usr/share/nginx/html
