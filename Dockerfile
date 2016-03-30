@@ -13,6 +13,7 @@ RUN apk add --no-progress \
     php-json \
     php-iconv \
     php-ctype \
+    php-dom \
     openssl \
     openssh-client \
     ca-certificates
