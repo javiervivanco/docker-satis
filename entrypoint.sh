@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z $VERBOSITY ]; then
-    $VERBOSITY=v
+    VERBOSITY=v
 fi
 
 if [ ! -z $GITHUB_OAUTH ]; then
