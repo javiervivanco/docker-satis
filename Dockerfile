@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.2
 ENV PHP_MEMORY_LIMIT=2048M
 RUN apk update
 RUN apk add -u musl  --no-progress 
@@ -16,9 +16,11 @@ RUN apk add --no-progress \
     php-dom \
     openssl \
     openssh-client \
+    curl \
     ca-certificates
 ADD https://getcomposer.org/composer.phar /usr/local/bin/composer
-ADD http://curl.haxx.se/ca/cacert.pem /etc/ssl/certs/
+RUN curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem
+RUN mv cacert.pem /etc/ssl/certs/
 RUN echo "openssl.cafile=/etc/ssl/certs/cacert.pem" >>  /etc/php/conf.d/openssl.ini
 RUN echo "openssl.capath=/etc/ssl/certs/" >>  /etc/php/conf.d/openssl.ini
 RUN sed -i  "s/memory_limit = 128M/memory_limit = $PHP_MEMORY_LIMIT/g" /etc/php/php.ini  
