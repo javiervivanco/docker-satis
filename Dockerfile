@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.3
 ENV PHP_MEMORY_LIMIT=2048M
 RUN apk update
 RUN apk add -u musl  --no-progress 
